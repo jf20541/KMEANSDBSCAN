@@ -7,6 +7,17 @@ An Unsupervised Learning clustering model, implementing KMeans and Density-Based
 ## Model and Vizualization
 KMeans:
 
+![](https://github.com/jf20541/KMeansDbscanPCA/blob/main/plots/Kmeans_Elbow.png?raw=true)
+
+
+
+<details>
+  <summary>KMeans with PCA</summary>
+ 
+  ![](https://github.com/jf20541/KMeansDbscanPCA/blob/main/plots/Kmeans_Elbow.png?raw=true)
+
+</details>
+
 DBSCAN: 
 
 PCA: 
