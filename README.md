@@ -7,20 +7,39 @@ An Unsupervised Learning clustering model, implementing KMeans and Density-Based
 ## Model and Vizualization
 KMeans:
 
-![](https://github.com/jf20541/KMeansDbscanPCA/blob/main/plots/Kmeans_Elbow.png?raw=true)
-
-
+![](https://github.com/jf20541/KMeansDbscanPCA/blob/main/plots/KMeansPCA2.png?raw=true)
 
 <details>
-  <summary>KMeans with PCA</summary>
- 
+  <summary>Finding Optimal K using Elbow Method</summary>
+  
   ![](https://github.com/jf20541/KMeansDbscanPCA/blob/main/plots/Kmeans_Elbow.png?raw=true)
-
 </details>
 
 DBSCAN: 
 
+
+<details>
+  <summary>Finding Optimal Epsilon using K-Nearest Neighbor</summary>
+ 
+  ![](https://github.com/jf20541/KMeansDbscanPCA/blob/main/plots/optimal_epsilon.png?raw=true)
+</details>
+
 PCA: 
+
+![](https://github.com/jf20541/KMeansDbscanPCA/blob/main/plots/pca_explained_var.png?raw=true)
+<details>
+  <summary>PCA Explained Variance Ratio for N-Components</summary>
+ 
+  ![](https://github.com/jf20541/KMeansDbscanPCA/blob/main/plots/pca_explained_barchart.png?raw=true)
+</details>
+
+## Code
+- `kmean.py:`
+- `dbscan.py:`
+- `pca.py:` Dimensionality reduction, plotting, and deploying the PCA model
+- `data.py:` Cleaned the data
+- `config.py:` Defined file paths as global variable
+- `population_seg.ipynb:` Exploring data by visualization and feature engineering
 
 ## Parameters
 ### Principal Component Analysis (PCA)
@@ -35,19 +54,6 @@ PCA:
 - `n_clusters:` Find the optima K-value by plotting and using Elbow Method 
 - `max_iter:` Maximum number of iterations of the k-means algorithm for a single run
 - `n_init:` Number of time the k-means algorithm will be run with different centroid seeds
-
-## Output
-
-
-
-## Code
-- `kmean.py:`
-- `dbscan.py:`
-- `pca.py:` Dimensionality reduction, plotting, and deploying the PCA model
-- `data.py:` Cleaned the data
-- `config.py:` Defined file paths as global variable
-- `population_seg.ipynb:` Exploring data by visualization and feature engineering
-
 
 ## Data
 [Population Segmentation Data](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/XTXCYD) and 
