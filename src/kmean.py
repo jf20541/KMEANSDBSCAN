@@ -24,6 +24,7 @@ class PlotKMeans:
         plt.title("Optimal K using Elbow Method")
         plt.xlabel("Number of K")
         plt.ylabel("Number of Iterations")
+        plt.legend()
         plt.savefig("../plots/Kmeans_Elbow.png")
         plt.show()
 
