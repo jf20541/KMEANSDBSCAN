@@ -30,6 +30,8 @@ K-Means finds the optimal centroids (number of clusters is represented by K) by 
 ### DBSCAN
 An unsupervised algorithm for density-based clustering that identifies distinctive clusters within a high point density which can signal outliers natively. The model has two hyper-parameters Epsilon and Minimum Points. Epsilon is the radius of the neighborhood around any point. Minimum Point is the minimum number of points within the Epsilon radius.
 
+![](https://github.com/jf20541/KMeansDbscanPCA/blob/main/plots/DBSCAN_PCA.png?raw=true)
+
 - `eps:` Used KNN to find the optimal Epsilon value. The maximum distance between two samples for one to be considered as in the neighborhood of the other
 - `min_samples:` The number of samples in a neighborhood for a point to be considered as a core point
 
