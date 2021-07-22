@@ -20,11 +20,14 @@ class DBSACNModel:
     def __init__(self, data):
         self.data = data
 
-    def pca_model(self):
+    def pca_array(self):
+        # Fit and transformed PCA to 7 components to df
         return PCA(n_components=7).fit_transform(self.data)
 
     def find_epsilon(self):
-        pca = self.pca_model()
+        # instatiate the pca array function
+        pca = self.pca_array()
+        # instatiate and fitted KNN 
         neighbors = NearestNeighbors(n_neighbors=7)
         neighbors_fit = neighbors.fit(pca)
         distances, _ = neighbors_fit.kneighbors(pca)
@@ -38,11 +41,13 @@ class DBSACNModel:
         plt.show()
 
     def plot_dbscan(self):
-        pca = self.pca_model()
-        # instatiate the DBSCAN
+        # instatiate the pca array function 
+        pca = self.pca_array()
+        # Fit the pca array to DBSCAN with defined parameter
         dbscan = DBSCAN(eps=0.22, min_samples=16).fit(pca)
         core_samples_mask = np.zeros_like(dbscan.labels_)
         core_samples_mask[dbscan.core_sample_indices_] = True
+        # Estimate number of clusters (-1) is for outliers
         labels = dbscan.labels_
         n_clusters = len(set(labels)) - (1 if -1 in labels else 0)
         print(f"Estimated number of clusters: {n_clusters}")
@@ -64,6 +69,7 @@ class DBSACNModel:
         plt.title("Frequency Clustering DBSCAN & PCA")
         plt.xlabel("Sample")
         plt.ylabel("Frequencies")
+        plt.savefig("../plots/DBSCAN_PCA.png")
         plt.legend()
         plt.show()
 

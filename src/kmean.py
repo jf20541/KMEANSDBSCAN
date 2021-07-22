@@ -11,10 +11,13 @@ class PlotKMeans:
         self.data = data
 
     def pca_model(self):
+        # Fit and transformed PCA to 7 components to df 
         return PCA(n_components=7).fit_transform(self.data)
 
     def plot_optimum_cluster(self):
         pca = self.pca_model()
+        # set empty list for each K-iterations
+        # to find the optimal k-value using Elbow Method
         iter_num = []
         for i in range(1, 10):
             model = KMeans(n_clusters=i, max_iter=500)
@@ -34,10 +37,13 @@ class KMeansPCA:
         self.data = data
 
     def plot_pca_kmeans(self):
+        # initiated PCA and KMeans with defined parameters
+        # PCA=7 Components explain 80% and K=6 using Elbow Method
         pca = PCA(n_components=7).fit_transform(self.data)
         model = KMeans(n_clusters=6)
         model_fit = model.fit(pca)
         labels = model_fit.labels_
+        # plot each cluster 
         for i in range(0, 6):
             color = ["red", "blue", "green", "cyan", "yellow", "black"]
             label = [
@@ -69,7 +75,6 @@ if __name__ == "__main__":
 
     plot = PlotKMeans(df)
     plot.plot_optimum_cluster()
-    # K = 6
 
     model = KMeansPCA(df)
     model.plot_pca_kmeans()

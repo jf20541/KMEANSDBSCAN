@@ -10,6 +10,7 @@ class PCAModel:
         self.data = data
 
     def plot_pca_var(self):
+        # initiated PCA to find optimal components that explain 80% of variance
         pca = PCA(n_components=35)
         pca.fit(self.data)
         variance_exp_cumsum = pca.explained_variance_ratio_.cumsum().round(2)
@@ -24,6 +25,7 @@ class PCAModel:
         plt.show()
 
     def plot_pca_bar(self):
+        # plot bar-chart explaing each components explained variance ratio
         pca = PCA(n_components=15)
         pca.fit(self.data)
         ratio = pca.explained_variance_ratio_
@@ -45,4 +47,3 @@ if __name__ == "__main__":
     plot_model = PCAModel(df)
     plot_model.plot_pca_var()
     plot_model.plot_pca_bar()
-    # Number of PC = 7 that explains 80% of explained variance

@@ -3,13 +3,14 @@ import config
 
 
 def clean_data(dataframe):
+    # define the index to state_city
     return dataframe.rename(columns={"Unnamed: 0": "State_City"}).set_index(
         "State_City"
     )
 
 
 def clean_colname(dataframe):
-    # force column names to be lower case, no spaces, no dashes
+    # clean columns, set them to lower case, no spaces, no dashes
     return [
         x.lower()
         .replace(" ", "_")
@@ -25,6 +26,8 @@ def clean_colname(dataframe):
 
 if __name__ == "__main__":
     df = pd.read_csv(config.TRAINING_FILE)
+    df = clean_data(df)
+    df = clean_colname(df)
     if df.isnull().sum().any() == False:
         print("Data is Clean")
     else:
