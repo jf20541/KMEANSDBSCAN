@@ -1,7 +1,9 @@
 # KMeansDbscanPCA
 
 ## Objective
-An Unsupervised Learning clustering model, implementing KMeans and Density-Based Spatial Clustering of Application with Noise (DBSCAN) after reducing the dimensionality using Principal Component Analysis. Apply techniques to find similar characteristics of different US counties for predatory marketing, government campaigns, business development, etc by examing 34 attributes. 
+An Unsupervised Learning clustering model, implementing KMeans and Density-Based Spatial Clustering of Application with Noise (DBSCAN) after reducing the dimensionality using Principal Component Analysis. Apply techniques to find similar characteristics of different US counties for predatory marketing, government campaigns, business development, etc by examing 34 attributes.
+
+K-Means and Hierarchical Clustering both fail in creating clusters of arbitrary shapes.
 
 
 ## Model and Vizualization
@@ -34,8 +36,8 @@ PCA:
 </details>
 
 ## Code
-- `kmean.py:`
-- `dbscan.py:`
+- `kmean.py:` Seeked the optimal k-cluster for the population of counties based on the selected 7 PCA attributes 
+- `dbscan.py:` Seeked the optimal epsilon and minPoint value with the selected 7 PCA attributes.
 - `pca.py:` Dimensionality reduction, plotting, and deploying the PCA model
 - `data.py:` Cleaned the data
 - `config.py:` Defined file paths as global variable
