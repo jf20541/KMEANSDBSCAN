@@ -3,13 +3,27 @@
 ## Objective
 An Unsupervised Learning clustering model, implementing KMeans and Density-Based Spatial Clustering of Application with Noise (DBSCAN) after reducing the dimensionality using Principal Component Analysis. Apply techniques to find similar characteristics of different US counties for predatory marketing, government campaigns, business development, etc by examing 34 attributes.
 
-## Code
-- `kmean.py:` Seeked the optimal k-cluster for the population of counties based on the selected 7 PCA attributes 
-- `dbscan.py:` Seeked the optimal epsilon and minPoint value with the selected 7 PCA attributes.
-- `pca.py:` Dimensionality reduction, plotting, and deploying the PCA model
-- `data.py:` Cleaned the data
-- `config.py:` Defined file paths as global variable
-- `population_seg.ipynb:` Exploring data by visualization and feature engineering
+## Repository File Structure
+    ├── src          
+    │   ├── kmean.py             # Optimal K-cluster for the population of counties based on the selected 7 PCA attributes 
+    │   ├── dbscan.py            # Optimal epsilon and minPoint value with the selected 7 PCA attributes
+    │   ├── pca.py               # Dimensionality reduction, plotting, and deploying the PCA model
+    │   ├── data.py              # Cleaned the data
+    │   └── config.py            # Define path as global variable
+    ├── inputs
+    │   ├── train.csv            # Training dataset
+    │   └── population_seg.csv   # Cleaned data
+    ├── notebooks            
+    │   └── population_seg.ipynb # Exploratory Data Analysis, Visualization and Feature Engineering 
+    ├── plots
+    │   ├── DBSCAN_PCA.png       # Frequency clustering DBSCAN & PCA
+    │   ├── KMeansPCA2.png       # Frequency clustering KMeans & PCA
+    │   ├── Kmeans_Elbow.png     # Optimal K using Elbow Method
+    │   ├── optimial_epsilon.png # Optimal Epsilon using KNN
+    │   ├── pca_explained_bar.png  # Explained Variance
+    │   └── pca_explained_var.png  # N-Components for Explained Variance
+    ├── requierments.txt         # Packages used for project
+    └── README.md
 
 ## Model and Vizualization
 ### KMeans
