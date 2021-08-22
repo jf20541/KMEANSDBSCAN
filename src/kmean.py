@@ -11,7 +11,7 @@ class PlotKMeans:
         self.data = data
 
     def pca_model(self):
-        # Fit and transformed PCA to 7 components to df 
+        # Fit and transformed PCA to 7 components to df
         return PCA(n_components=7).fit_transform(self.data)
 
     def plot_optimum_cluster(self):
@@ -43,7 +43,7 @@ class KMeansPCA:
         model = KMeans(n_clusters=6)
         model_fit = model.fit(pca)
         labels = model_fit.labels_
-        # plot each cluster 
+        # plot each cluster
         for i in range(0, 6):
             color = ["red", "blue", "green", "cyan", "yellow", "black"]
             label = [

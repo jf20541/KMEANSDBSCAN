@@ -27,7 +27,7 @@ class DBSACNModel:
     def find_epsilon(self):
         # instatiate the pca array function
         pca = self.pca_array()
-        # instatiate and fitted KNN 
+        # instatiate and fitted KNN
         neighbors = NearestNeighbors(n_neighbors=7)
         neighbors_fit = neighbors.fit(pca)
         distances, _ = neighbors_fit.kneighbors(pca)
@@ -41,7 +41,7 @@ class DBSACNModel:
         plt.show()
 
     def plot_dbscan(self):
-        # instatiate the pca array function 
+        # instatiate the pca array function
         pca = self.pca_array()
         # Fit the pca array to DBSCAN with defined parameter
         dbscan = DBSCAN(eps=0.22, min_samples=16).fit(pca)
