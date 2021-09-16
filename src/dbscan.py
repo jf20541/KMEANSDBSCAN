@@ -75,7 +75,8 @@ class DBSACNModel:
 
 
 if __name__ == "__main__":
-    df = pd.read_csv(config.TESTING_FILE)
+    # training data is already scaled, outliers are taken care of
+    df = pd.read_csv(config.TRAINING_FILE)
     df = df.set_index("State_City")
     model = DBSACNModel(df)
     model.find_epsilon()

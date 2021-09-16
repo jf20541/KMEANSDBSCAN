@@ -40,7 +40,7 @@ class KMeansPCA:
         # initiated PCA and KMeans with defined parameters
         # PCA=7 Components explain 80% and K=6 using Elbow Method
         pca = PCA(n_components=7).fit_transform(self.data)
-        model = KMeans(n_clusters=6)
+        model = KMeans(n_clusters=3)
         model_fit = model.fit(pca)
         labels = model_fit.labels_
         # plot each cluster
@@ -70,7 +70,8 @@ class KMeansPCA:
 
 
 if __name__ == "__main__":
-    df = pd.read_csv(config.TESTING_FILE)
+    # training data is already scaled, outliers are taken care of
+    df = pd.read_csv(config.TRAINING_FILE)
     df = df.set_index("State_City")
 
     plot = PlotKMeans(df)

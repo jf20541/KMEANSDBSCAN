@@ -26,8 +26,9 @@ def clean_colname(dataframe):
 
 if __name__ == "__main__":
     df = pd.read_csv(config.TRAINING_FILE)
+    df_col = clean_colname(df)[1:]
     df = clean_data(df)
-    df = clean_colname(df)
+    df.columns = df_col
     if df.isnull().sum().any() == False:
         print("Data is Clean")
     else:

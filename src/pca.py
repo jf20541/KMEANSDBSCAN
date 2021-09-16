@@ -11,11 +11,11 @@ class PCAModel:
 
     def plot_pca_var(self):
         # initiated PCA to find optimal components that explain 80% of variance
-        pca = PCA(n_components=35)
+        pca = PCA(n_components=17)
         pca.fit(self.data)
         variance_exp_cumsum = pca.explained_variance_ratio_.cumsum().round(2)
         fig, axes = plt.subplots(1, 1, figsize=(16, 7), dpi=100)
-        xi = np.arange(1, 36, step=1)
+        xi = np.arange(1, 18, step=1)
         plt.plot(xi, variance_exp_cumsum, marker="o", linestyle="-", color="b")
         plt.title("N-Components for Explained Variance")
         plt.xlabel("Number of Components")
@@ -37,12 +37,13 @@ class PCAModel:
         plt.xlabel("Number of Components")
         plt.ylabel("Variance (%)")
         plt.xticks(features)
-        plt.savefig("../plots/pca_explained_barchart.png")
+        # plt.savefig("../plots/pca_explained_barchart.png")
         plt.show()
 
 
 if __name__ == "__main__":
-    df = pd.read_csv(config.TESTING_FILE)
+    df = pd.read_csv(config.TRAINING_FILE)
+    print(df.shape)
     df = df.set_index("State_City")
     plot_model = PCAModel(df)
     plot_model.plot_pca_var()
